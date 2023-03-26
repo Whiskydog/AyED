@@ -36,9 +36,9 @@ public class Solucion {
 				min = i;
 			if (i > max)
 				max = i;
-			prom = prom + i;
+			prom += i;
 		}
-		prom = prom / valores.length;
+		prom /= valores.length;
 
 		return new MinMaxProm(min, max, prom);
 	}
@@ -53,9 +53,9 @@ public class Solucion {
 				min = i;
 			if (i > max)
 				max = i;
-			prom = prom + i;
+			prom += i;
 		}
-		prom = prom / valores.length;
+		prom /= valores.length;
 
 		minMaxProm.set(min, max, prom);
 	}

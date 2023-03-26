@@ -29,9 +29,9 @@ public class MinMaxProm {
 				min = i;
 			if (i > max)
 				max = i;
-			prom = prom + i;
+			prom += i;
 		}
-		prom = prom / valores.length;
+		prom /= valores.length;
 	}
 
 	public int getMin() {
