@@ -20,4 +20,8 @@ Mas información aquí: [Plan oficial de la asignatura.](https://www.info.unlp.e
 
 ## Prácticas 📚
 
+(Se necesita poseer usuario en la plataforma Cátedras.)
+
 - [Práctica 1](https://catedras.linti.unlp.edu.ar/pluginfile.php/129659/mod_resource/content/0/2023_TP01B_Introduccion_al_Lenguaje_Java.pdf)
+
+- [Práctica 2](https://catedras.linti.unlp.edu.ar/pluginfile.php/129661/mod_resource/content/0/2023_TP02_Listas.pdf)
