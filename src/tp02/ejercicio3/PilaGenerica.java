@@ -11,7 +11,7 @@ public class PilaGenerica<T> {
 	}
 
 	public void apilar(T elem) {
-		datos.agregarEn(elem, 1);
+		datos.agregarInicio(elem);
 	}
 
 	public T desapilar() {
