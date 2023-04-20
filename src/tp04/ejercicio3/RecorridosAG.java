@@ -2,6 +2,7 @@ package tp04.ejercicio3;
 
 import tp02.ejercicio2.ListaEnlazadaGenerica;
 import tp02.ejercicio2.ListaGenerica;
+import tp02.ejercicio3.ColaGenerica;
 import tp04.ejercicio1.ArbolGeneral;
 
 public class RecorridosAG {
@@ -57,6 +58,32 @@ public class RecorridosAG {
 		if (dato % 2 != 0 && dato > n)
 			imparesMayoresQueN.agregarFinal(dato);
 
+		return imparesMayoresQueN;
+	}
+	
+	public ListaGenerica<Integer> numerosImparesMayoresQuePorNiveles(ArbolGeneral<Integer> a, Integer n) {
+		ListaGenerica<Integer> imparesMayoresQueN = new ListaEnlazadaGenerica<>();
+		ColaGenerica<ArbolGeneral<Integer>> cola = new ColaGenerica<>();
+		cola.encolar(a);
+		cola.encolar(null);
+		
+		while (!cola.esVacia()) {
+			ArbolGeneral<Integer> actual;
+			while (!cola.esVacia() && (actual = cola.desencolar()) != null) {
+				Integer dato = actual.getDato();
+				if (dato % 2 != 0 && dato > n)
+					imparesMayoresQueN.agregarFinal(dato);
+				if (actual.tieneHijos()) {
+					ListaGenerica<ArbolGeneral<Integer>> hijos = actual.getHijos();
+					hijos.comenzar();
+					while (!hijos.fin())
+						cola.encolar(hijos.proximo());
+				}
+			}
+			if (!cola.esVacia())
+				cola.encolar(null);
+		}
+		
 		return imparesMayoresQueN;
 	}
 

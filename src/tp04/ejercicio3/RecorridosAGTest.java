@@ -52,5 +52,16 @@ class RecorridosAGTest {
 		listaPostOrden = recorridos.numerosImparesMayoresQuePostOrden(arbol, 45);
 		assertTrue(listaPostOrden.esVacia());
 	}
+	
+	@Test
+	void testNumerosImparesMayoresQuePorNiveles() {
+		ListaGenerica<Integer> listaPorNiveles = recorridos.numerosImparesMayoresQuePorNiveles(arbol, 10);
+		listaPorNiveles.comenzar();
+		assertEquals(13, listaPorNiveles.proximo());
+		assertEquals(33, listaPorNiveles.proximo());
+		assertEquals(41, listaPorNiveles.proximo());
+		listaPorNiveles = recorridos.numerosImparesMayoresQuePorNiveles(arbol, 45);
+		assertTrue(listaPorNiveles.esVacia());
+	}
 
 }
