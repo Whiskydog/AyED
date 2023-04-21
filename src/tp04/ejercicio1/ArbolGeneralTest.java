@@ -59,6 +59,7 @@ class ArbolGeneralTest {
 		assertTrue(listaPreOrden.fin());
 	}
 
+	@Test
 	void testEsAncestro() {
 		arbol.agregarHijo(new ArbolGeneral<Integer>(2));
 		assertTrue(arbol.esAncestro(1, 2));

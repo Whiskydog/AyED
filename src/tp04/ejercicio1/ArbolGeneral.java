@@ -161,7 +161,7 @@ public class ArbolGeneral<T> {
 		while (!cola.esVacia()) {
 			ArbolGeneral<T> actual = cola.desencolar();
 			if (!actual.esVacio() && actual.getDato().equals(a))
-				return actual.preOrden().incluye(b);
+				return actual.nivel(b) != -1;
 			if (actual.tieneHijos()) {
 				ListaGenerica<ArbolGeneral<T>> hijos = actual.getHijos();
 				hijos.comenzar();
