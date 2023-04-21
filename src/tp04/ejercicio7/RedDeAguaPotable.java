@@ -15,7 +15,7 @@ public class RedDeAguaPotable {
 	}
 
 	private double calcularCaudalMinimo(ArbolGeneral<String> subred, double caudal) {
-		if (!subred.tieneHijos())
+		if (subred.esHoja())
 			return caudal;
 
 		double caudalActual = caudal / subred.getHijos().tamanio();
