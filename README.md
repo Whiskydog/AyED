@@ -27,3 +27,5 @@ Mas información aquí: [Plan oficial de la asignatura.](https://www.info.unlp.e
 - [Práctica 2](https://catedras.linti.unlp.edu.ar/pluginfile.php/129661/mod_resource/content/0/2023_TP02_Listas.pdf)
 
 - [Práctica 3](https://catedras.linti.unlp.edu.ar/pluginfile.php/129666/mod_resource/content/0/2023_TP03_AB.pdf)
+
+- [Práctica 4](https://catedras.linti.unlp.edu.ar/pluginfile.php/130543/mod_resource/content/1/2023_TP04_AG.pdf)
