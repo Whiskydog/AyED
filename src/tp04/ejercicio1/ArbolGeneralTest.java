@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import tp02.ejercicio2.ListaGenerica;
+
 class ArbolGeneralTest {
 	private ArbolGeneral<Integer> arbol;
 
@@ -41,6 +43,30 @@ class ArbolGeneralTest {
 		arbol.agregarHijo(new ArbolGeneral<Integer>(3));
 		arbol.agregarHijo(new ArbolGeneral<Integer>(4));
 		assertEquals(3, arbol.ancho());
+	}
+
+	@Test
+	void testPreOrden() {
+		arbol.agregarHijo(new ArbolGeneral<Integer>(2));
+		arbol.agregarHijo(new ArbolGeneral<Integer>(3));
+		arbol.getHijos().elemento(2).agregarHijo(new ArbolGeneral<Integer>(4));
+		ListaGenerica<Integer> listaPreOrden = arbol.preOrden();
+		listaPreOrden.comenzar();
+		assertEquals(1, listaPreOrden.proximo());
+		assertEquals(2, listaPreOrden.proximo());
+		assertEquals(3, listaPreOrden.proximo());
+		assertEquals(4, listaPreOrden.proximo());
+		assertTrue(listaPreOrden.fin());
+	}
+
+	void testEsAncestro() {
+		arbol.agregarHijo(new ArbolGeneral<Integer>(2));
+		assertTrue(arbol.esAncestro(1, 2));
+		assertFalse(arbol.esAncestro(2, 1));
+
+		arbol.getHijos().elemento(1).agregarHijo(new ArbolGeneral<Integer>(3));
+		assertTrue(arbol.esAncestro(1, 3));
+		assertTrue(arbol.esAncestro(2, 3));
 	}
 
 }

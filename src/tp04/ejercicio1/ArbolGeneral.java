@@ -69,7 +69,22 @@ public class ArbolGeneral<T> {
 	}
 
 	public ListaEnlazadaGenerica<T> preOrden() {
-		return null;
+		ListaEnlazadaGenerica<T> lista = new ListaEnlazadaGenerica<>();
+		if (this.esVacio())
+			return lista;
+
+		lista.agregarFinal(dato);
+		if (this.tieneHijos()) {
+			hijos.comenzar();
+			while (!hijos.fin()) {
+				ListaEnlazadaGenerica<T> listaHijo = hijos.proximo().preOrden();
+				listaHijo.comenzar();
+				while (!listaHijo.fin())
+					lista.agregarFinal(listaHijo.proximo());
+			}
+		}
+
+		return lista;
 	}
 
 	public Integer altura() {
@@ -138,6 +153,24 @@ public class ArbolGeneral<T> {
 		}
 
 		return anchoMaximo;
+	}
+
+	public Boolean esAncestro(T a, T b) {
+		ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+		cola.encolar(this);
+		while (!cola.esVacia()) {
+			ArbolGeneral<T> actual = cola.desencolar();
+			if (!actual.esVacio() && actual.getDato().equals(a))
+				return actual.preOrden().incluye(b);
+			if (actual.tieneHijos()) {
+				ListaGenerica<ArbolGeneral<T>> hijos = actual.getHijos();
+				hijos.comenzar();
+				while (!hijos.fin())
+					cola.encolar(hijos.proximo());
+			}
+		}
+
+		return false;
 	}
 
 }
