@@ -1,0 +1,31 @@
+{
+	"vertices": [
+		"La Plata",
+		"Lomas de Copello",
+		"Arana",
+		"Ignacio Correas",
+		"Los Naranjos",
+		"General Mansilla",
+		"Poblet",
+		"Magdalena",
+		"Vieytes"
+	],
+	"aristas": [
+		["La Plata", "Lomas de Copello", 13],
+		["Los Naranjos", "Lomas de Copello", 15],
+		["La Plata", "Arana", 18],
+		["Arana", "Ignacio Correas", 6],
+		["Ignacio Correas", "General Mansilla", 12],
+		["Los Naranjos", "Magdalena", 22],
+		["General Mansilla", "Magdalena", 30],
+		["Poblet", "Magdalena", 69],
+		["La Plata", "Poblet", 22],
+		["Poblet", "General Mansilla", 29],
+		["Los Naranjos", "General Mansilla", 12],
+		["Poblet", "Vieytes", 44],
+		["General Mansilla", "Vieytes", 41],
+		["Vieytes", "Magdalena", 24]
+	],
+	"dirigido": false,
+	"pesado": true
+}
