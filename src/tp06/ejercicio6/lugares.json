@@ -1,0 +1,41 @@
+{
+	"vertices": [
+		"Ayuntamiento",
+		"Parque Botanico",
+		"Museo Munch",
+		"El Tigre",
+		"La Opera",
+		"Fortaleza Akershus",
+		"Galeria Nacional",
+		"Palacio Real",
+		"Akker Brigge",
+		"Holmenkollen",
+		"Parque Vigeland",
+		"FolkMuseum",
+		"Museo Fram",
+		"Museo del Barco Polar",
+		"Museo Vikingo"
+	],
+	"aristas": [
+		["Ayuntamiento", "El Tigre", 15],
+		["El Tigre", "La Opera", 5],
+		["La Opera", "Fortaleza Akershus", 10],
+		["El Tigre", "Museo Munch", 15],
+		["Museo Munch", "Parque Botanico", 1],
+		["Ayuntamiento", "Parque Botanico", 10],
+		["Parque Botanico", "Galeria Nacional", 15],
+		["Galeria Nacional", "Parque Vigeland", 10],
+		["Parque Vigeland", "Holmenkollen", 30],
+		["Parque Vigeland", "FolkMuseum", 20],
+		["FolkMuseum", "Museo Fram", 5],
+		["Museo Fram", "Museo del Barco Polar", 5],
+		["Museo del Barco Polar", "Museo Vikingo", 5],
+		["Museo Vikingo", "Akker Brigge", 30],
+		["FolkMuseum", "Akker Brigge", 30],
+		["FolkMuseum", "Palacio Real", 5],
+		["Palacio Real", "Ayuntamiento", 5],
+		["Akker Brigge", "Ayuntamiento", 20]
+	],
+	"pesado": true,
+	"dirigido": false
+}
