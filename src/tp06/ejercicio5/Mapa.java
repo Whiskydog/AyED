@@ -36,10 +36,10 @@ public class Mapa {
 			System.out.println(mapa.caminoMasCorto(origen, destino));
 		}
 		scanner.close();
-		
+
 		System.out.println(mapa.caminoSinCargarCombustible("La Plata", "Magdalena", 50));
 		System.out.println(mapa.caminoSinCargarCombustible("La Plata", "Magdalena", 45));
-		
+
 		System.out.println(mapa.caminoConMenorCargaDeCombustible("La Plata", "Arana", 15));
 	}
 
@@ -82,18 +82,23 @@ public class Mapa {
 
 		return camino;
 	}
-	
+
 	public ListaGenerica<String> caminoConMenorCargaDeCombustible(String ciudad1, String ciudad2, int tanqueAuto) {
 		Vertice<String> origen = obtenerVertice(ciudad1);
 		Vertice<String> destino = obtenerVertice(ciudad2);
+		if (origen == null || destino == null)
+			return new ListaEnlazadaGenerica<>();
+
 		Dijkstra<String> dijkstra = new Dijkstra<>(mapaCiudades, origen, tanqueAuto);
-		
 		return dijkstra.obtenerCamino(destino);
 	}
 
 	public ListaGenerica<String> caminoSinCargarCombustible(String ciudad1, String ciudad2, int tanqueAuto) {
 		Vertice<String> origen = obtenerVertice(ciudad1);
 		Vertice<String> destino = obtenerVertice(ciudad2);
+		if (origen == null || destino == null)
+			return new ListaEnlazadaGenerica<>();
+
 		Dijkstra<String> dijkstra = new Dijkstra<>(mapaCiudades, origen, Integer.MAX_VALUE);
 		if (dijkstra.distanciaHasta(destino) > tanqueAuto)
 			return new ListaEnlazadaGenerica<>();
@@ -101,8 +106,13 @@ public class Mapa {
 	}
 
 	public ListaGenerica<String> caminoMasCorto(String ciudad1, String ciudad2) {
-		Dijkstra<String> dijkstra = new Dijkstra<>(mapaCiudades, obtenerVertice(ciudad1), Integer.MAX_VALUE);
-		return dijkstra.obtenerCamino(obtenerVertice(ciudad2));
+		Vertice<String> origen = obtenerVertice(ciudad1);
+		Vertice<String> destino = obtenerVertice(ciudad2);
+		if (origen == null || destino == null)
+			return new ListaEnlazadaGenerica<>();
+
+		Dijkstra<String> dijkstra = new Dijkstra<>(mapaCiudades, origen, Integer.MAX_VALUE);
+		return dijkstra.obtenerCamino(destino);
 	}
 
 	private void buscarCamino(Vertice<String> origen, String destino, boolean[] visitados, ListaGenerica<String> camino,
