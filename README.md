@@ -29,3 +29,7 @@ Mas información aquí: [Plan oficial de la asignatura.](https://www.info.unlp.e
 - [Práctica 3](https://catedras.linti.unlp.edu.ar/pluginfile.php/129666/mod_resource/content/0/2023_TP03_AB.pdf)
 
 - [Práctica 4](https://catedras.linti.unlp.edu.ar/pluginfile.php/130543/mod_resource/content/1/2023_TP04_AG.pdf)
+
+- [Práctica 5](https://catedras.linti.unlp.edu.ar/pluginfile.php/130548/mod_resource/content/1/2023ayedTP05%20-%20An%C3%A1lisis%20de%20Algoritmos.pdf)
+
+- [Práctica 6](https://catedras.linti.unlp.edu.ar/pluginfile.php/130556/mod_resource/content/1/AyED%20Cursada%202023%20-%20TP06%20-%20Grafos.pdf)
